@@ -1,79 +1,117 @@
-import { content } from '../content'
-import { Reveal } from './Reveal'
+import { content, editionDate } from '../content'
+import { Arrow, ArrowText } from './Arrow'
+import { ThemeToggle } from './ThemeToggle'
 
 export function Hero() {
-  const { profile, contacts } = content
+  const { profile, proof, texts, contacts } = content
+  const telegram = contacts.find((contact) => contact.label === 'Telegram')
 
   return (
-    <section id="top" className="relative overflow-hidden">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -top-40 h-80 w-80 rounded-full opacity-20 blur-3xl"
-        style={{ backgroundColor: 'var(--c-accent)' }}
-      />
-
-      <div className="mx-auto flex max-w-5xl flex-col gap-7 px-6 pb-16 pt-16 sm:pb-24 sm:pt-24">
-        <Reveal>
-          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs text-muted">
-            <span
-              aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full"
-              style={{ backgroundColor: 'var(--c-accent)' }}
-            />
-            {profile.availability}
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.05}>
-          <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
-            {profile.name}
-          </h1>
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <p className="max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-            {profile.tagline}
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <p className="text-sm text-muted">{profile.location}</p>
-        </Reveal>
-
-        <Reveal delay={0.2}>
-          <div className="flex flex-wrap items-center gap-3">
-            <a
-              href="#texts"
-              className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-page transition hover:opacity-90"
-            >
-              Тексты
-            </a>
-            <a
-              href="#tools"
-              className="rounded-full border border-line px-5 py-2.5 text-sm font-medium transition hover:border-accent hover:text-accent"
-            >
-              Инструменты
-            </a>
+    <section id="top">
+      <div className="sheet">
+        <div className="masthead" data-set>
+          <div className="dateline">
+            <span>Сводка · личное дело</span>
+            <span>Портфолио · две компетенции</span>
+            <span className="dateline-right">
+              <span>Томск · {editionDate}</span>
+              <ThemeToggle />
+            </span>
           </div>
-        </Reveal>
+          <div className="nameplate">
+            <h1>{profile.name}</h1>
+          </div>
+        </div>
 
-        <Reveal delay={0.25}>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
-            {contacts.map((contact) => (
-              <li key={contact.href}>
-                <a
-                  href={contact.href}
-                  className="transition hover:text-accent"
-                  {...(contact.href.startsWith('http')
-                    ? { target: '_blank', rel: 'noreferrer' }
-                    : {})}
-                >
-                  {contact.value}
-                </a>
-              </li>
+        <div className="front">
+          <div className="front-lead" data-set>
+            <h2 className="front-headline">
+              Пишет то, <br className="lead-break" />
+              что читают. <br className="lead-break" />
+              Собирает то, <br className="lead-break" />
+              чем пользуются.
+            </h2>
+            <p className="front-deck">{profile.tagline}</p>
+          </div>
+
+          <aside className="front-rail" data-set aria-label="Содержание номера">
+            <p className="rail-label">В номере</p>
+            <nav className="contents" aria-label="Содержание">
+              <a href="#texts">
+                <span className="n">01</span>
+                <span>
+                  Тексты
+                  <small>{texts.length} публикаций</small>
+                </span>
+              </a>
+              <a href="#tools">
+                <span className="n">02</span>
+                <span>
+                  Инструменты
+                  <small>4 стенда</small>
+                </span>
+              </a>
+              <a href="#experience">
+                <span className="n">03</span>
+                <span>
+                  Опыт
+                  <small>RumlinLab, фриланс, Томск</small>
+                </span>
+              </a>
+            </nav>
+            {telegram ? (
+              <a
+                className="slab"
+                href={telegram.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Написать в Telegram</span>
+                <Arrow className="slab-arrow" />
+              </a>
+            ) : null}
+            <p className="rail-note">{profile.availability}</p>
+          </aside>
+
+          <div className="measures" data-set>
+            {proof.map((point) => (
+              <div className="measure" key={point.label}>
+                <p className="measure-value">
+                  <ArrowText text={point.value} />
+                </p>
+                <p className="measure-label">{point.label}</p>
+                <p className="measure-source">{point.source}</p>
+              </div>
             ))}
-          </ul>
-        </Reveal>
+          </div>
+
+          <div className="teasers" data-set>
+            <div className="teaser-head">
+              <span>Начинается в номере</span>
+              <a href="#texts">
+                Все {texts.length} публикаций <Arrow />
+              </a>
+            </div>
+            {texts.slice(0, 3).map((text, index) => (
+              <a
+                className="teaser"
+                href={text.href}
+                target="_blank"
+                rel="noreferrer"
+                key={text.href}
+              >
+                <span className="num">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className="title">{text.title}</span>
+                <span className="src">{text.source}</span>
+                <span className="views">
+                  {text.views.replace(' просмотров', '')}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

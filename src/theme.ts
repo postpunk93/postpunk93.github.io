@@ -3,8 +3,8 @@ export type Theme = 'day' | 'warm' | 'night'
 export const THEMES: Theme[] = ['day', 'warm', 'night']
 
 export const THEME_LABELS: Record<Theme, string> = {
-  day: 'День',
-  warm: 'Тёплая',
+  day: 'Утро',
+  warm: 'Вечер',
   night: 'Ночь',
 }
 

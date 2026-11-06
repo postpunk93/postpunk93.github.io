@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { About } from './components/About'
 import { Contacts } from './components/Contacts'
 import { Experience } from './components/Experience'
@@ -9,24 +10,30 @@ import { Texts } from './components/Texts'
 import { Tools } from './components/Tools'
 
 export default function App() {
+  useEffect(() => {
+    const id = window.location.hash.slice(1)
+    if (!id) return
+
+    const target = document.getElementById(id)
+    if (!target) return
+
+    const frame = requestAnimationFrame(() => {
+      target.scrollIntoView({ block: 'start' })
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [])
+
   return (
     <>
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-surface focus:px-4 focus:py-2 focus:text-sm focus:shadow-lg"
-      >
+      <a className="skip" href="#main">
         Перейти к содержанию
       </a>
       <Header />
       <main id="main">
         <Hero />
+        <Texts />
+        <Tools />
         <About />
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="grid lg:grid-cols-2 lg:gap-10">
-            <Texts />
-            <Tools />
-          </div>
-        </div>
         <Experience />
         <Skills />
         <Contacts />

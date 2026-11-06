@@ -1,0 +1,15 @@
+{
+  "interpretation": "responsive-gate",
+  "measurementsAvailable": false,
+  "regions": [],
+  "gate": {
+    "ok": false,
+    "reasons": [
+      "no spec at .impeccable/build/spec.json: run comp-spec.mjs --comp  --grid, name the regions, then --regions regions.json"
+    ],
+    "advisories": [],
+    "unscopedReasons": [
+      "no spec at .impeccable/build/spec.json: run comp-spec.mjs --comp  --grid, name the regions, then --regions regions.json"
+    ]
+  }
+}

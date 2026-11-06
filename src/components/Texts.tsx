@@ -1,36 +1,61 @@
 import { content } from '../content'
-import { Reveal } from './Reveal'
 import { Section } from './Section'
 
 export function Texts() {
+  const { texts } = content
+  const featured = texts[0]
+  const rest = texts.slice(1)
+  const [amount, unit] = featured.views.split(' ')
+  const totalViews = texts.reduce((sum, text) => {
+    const match = text.views.match(/^(\d+)/)
+    return sum + (match ? Number(match[1]) : 0)
+  }, 0)
+
   return (
     <Section
       id="texts"
-      eyebrow="Тексты"
-      title="Лонгриды, которые читают"
-      contained={false}
+      folio="01"
+      title="Тексты"
+      note={`${texts.length} публикаций · ${totalViews} тыс. просмотров`}
     >
-      <ul className="space-y-3">
-        {content.texts.map((text, index) => (
-          <li key={text.href}>
-            <Reveal delay={index * 0.04}>
-              <a
-                href={text.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group flex h-full flex-col justify-between gap-4 rounded-2xl border border-line bg-surface p-5 transition hover:border-accent"
-              >
-                <h3 className="text-base font-medium leading-snug transition group-hover:text-accent">
-                  {text.title}
-                </h3>
-                <p className="text-xs text-muted">
-                  {text.source} · {text.views}
-                </p>
-              </a>
-            </Reveal>
-          </li>
-        ))}
-      </ul>
+      <article className="featured">
+        <div>
+          <p className="featured-source">{featured.source}</p>
+          <h3 className="featured-title">
+            <a href={featured.href} target="_blank" rel="noreferrer">
+              {featured.title}
+            </a>
+          </h3>
+        </div>
+        <div className="featured-view">
+          <span className="featured-number">{amount}</span>
+          <span className="featured-unit">{unit} просмотров</span>
+        </div>
+      </article>
+
+      <div className="index">
+        {rest.map((text, index) => {
+          const hasViews = /^\d/.test(text.views)
+          return (
+            <a
+              className="index-row"
+              href={text.href}
+              target="_blank"
+              rel="noreferrer"
+              key={text.href}
+            >
+              <span className="index-num">
+                {String(index + 2).padStart(2, '0')}
+              </span>
+              <span className="index-title">{text.title}</span>
+              <span className="index-source">{text.source}</span>
+              <span className={`index-views${hasViews ? '' : ' is-text'}`}>
+                {hasViews ? text.views.replace(' просмотров', '') : 'обзор'}
+              </span>
+            </a>
+          )
+        })}
+      </div>
     </Section>
   )
 }

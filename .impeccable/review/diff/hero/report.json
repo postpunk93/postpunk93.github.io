@@ -1,0 +1,15 @@
+{
+  "interpretation": "hero-gate",
+  "measurementsAvailable": false,
+  "regions": [],
+  "gate": {
+    "ok": false,
+    "reasons": [
+      "no hero capture at .impeccable/review/hero-repro.png: screenshot the first viewport at the comp's own dimensions (1440x900) into that path"
+    ],
+    "advisories": [],
+    "unscopedReasons": [
+      "no hero capture at .impeccable/review/hero-repro.png: screenshot the first viewport at the comp's own dimensions (1440x900) into that path"
+    ]
+  }
+}

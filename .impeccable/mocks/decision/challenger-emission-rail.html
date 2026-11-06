@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Калиброванная линейка — первый экран</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1440px; height: 900px; overflow: hidden; }
+  body {
+    background: #171918;
+    color: #c9c4b4;
+    font-family: "Golos Text", "Liberation Sans", Arial, sans-serif;
+    display: grid; grid-template-columns: 246px 1fr;
+    position: relative;
+  }
+  body::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,.022) 0 1px, transparent 1px 3px);
+  }
+  .rail { border-right: 1px solid rgba(201,196,180,.22); padding: 26px 20px; position: relative; }
+  .brand { font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: #8f8b7f; margin-bottom: 34px; }
+  .rail ul { list-style: none; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+  .rail li { position: relative; padding: 14px 0 14px 22px; color: #6f6c62; border-top: 1px solid rgba(201,196,180,.14); }
+  .rail li::before { content: ""; position: absolute; left: 0; top: 18px; width: 12px; height: 1px; background: #6f6c62; }
+  .rail li.on { color: #e8c547; }
+  .rail li.on::before { width: 20px; height: 3px; background: #e8c547; }
+  .rail li small { display: block; letter-spacing: .06em; text-transform: none; color: #5d5a52; margin-top: 3px; }
+  .rail .cal { position: absolute; left: 0; top: 96px; bottom: 26px; width: 1px; background: rgba(201,196,180,.22); }
+  .main { padding: 42px 56px 30px 48px; position: relative; overflow: hidden; }
+  .try { position: absolute; right: 0; top: 0; bottom: 0; width: 470px; }
+  .try i { position: absolute; top: 0; bottom: 0; width: 1px; background: currentColor; opacity: .8; }
+  .try i.a { left: 40px; color: #6f57c9; }
+  .try i.b { left: 128px; color: #4d7fbf; opacity: .45; }
+  .try i.c { left: 208px; color: #8fb8c9; opacity: .5; }
+  .try i.d { left: 300px; color: #e8c547; box-shadow: 0 0 18px rgba(232,197,71,.5); }
+  .try i.e { left: 302px; color: #e8c547; opacity: .5; width: 2px; }
+  .try i.f { left: 386px; color: #e07a5f; opacity: .55; }
+  .try .wash { position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 40%, rgba(201,196,180,.07), transparent 60%); }
+  .kicker { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #8f8b7f; margin-bottom: 18px; }
+  h1 {
+    font-family: "Golos Text", "Liberation Sans", sans-serif;
+    font-size: 76px; line-height: .95; letter-spacing: -.03em; font-weight: 600; color: #d7d2c2;
+    max-width: 700px;
+  }
+  h1 span { color: #e8c547; }
+  .lead { margin-top: 20px; max-width: 620px; font-size: 19px; line-height: 1.45; color: #a39e90; }
+  .metrics { display: grid; grid-template-columns: repeat(3, 236px); gap: 1px; margin-top: 46px; background: rgba(201,196,180,.18); border: 1px solid rgba(201,196,180,.18); }
+  .metric { background: #171918; padding: 16px 16px 14px; }
+  .metric small { display: block; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #7d796e; margin-bottom: 10px; }
+  .metric b { font-size: 40px; line-height: .95; font-weight: 500; letter-spacing: -.03em; color: #d7d2c2; }
+  .metric b em { font-style: normal; font-size: 15px; color: #8f8b7f; letter-spacing: 0; }
+  .metric p { margin-top: 8px; font-size: 12px; line-height: 1.35; color: #77736a; }
+  .active { position: absolute; right: 44px; bottom: 34px; width: 320px; border-top: 1px solid rgba(201,196,180,.3); padding-top: 10px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8f8b7f; display: flex; justify-content: space-between; }
+  .active b { color: #e8c547; font-weight: 500; }
+  .cta { position: absolute; left: 48px; bottom: 34px; border: 1px solid #e8c547; color: #e8c547; padding: 12px 18px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <aside class="rail">
+    <div class="brand">Кузакин / прибор</div>
+    <div class="cal"></div>
+    <ul>
+      <li class="on">01 · Обзор<small>кто и что измерено</small></li>
+      <li>02 · Тексты<small>8 публикаций</small></li>
+      <li>03 · Инструменты<small>4 стенда</small></li>
+      <li>04 · Опыт<small>журнал эксплуатации</small></li>
+      <li>05 · Допуски<small>навыки</small></li>
+      <li>06 · Связь<small>Telegram</small></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="try" aria-hidden="true">
+      <div class="wash"></div>
+      <i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i><i class="e"></i><i class="f"></i>
+    </div>
+
+    <div class="kicker">Сводные показания · 06.11.2026</div>
+    <h1>Один человек —<br>две <span>сильные</span> стороны</h1>
+    <p class="lead">Лонгриды для Хабра и VC, которые читают до 141 тыс. раз, и инструменты, которые сам собрал и довёл до продакшена.</p>
+
+    <div class="metrics">
+      <div class="metric"><small>Просмотры / лучшая</small><b>141 <em>тыс.</em></b><p>статья про производство на 90 млн · Хабр</p></div>
+      <div class="metric"><small>Время / раскладка</small><b>4 ч → 10 <em>мин</em></b><p>article-layout · восемь площадок</p></div>
+      <div class="metric"><small>Стендов в продакшене</small><b>4</b><p>ими пользуются нетехнические коллеги</p></div>
+    </div>
+
+    <div class="active"><span>Активная секция</span><b>01 · Обзор</b></div>
+    <div class="cta">Написать в Telegram →</div>
+  </main>
+</body>
+</html>

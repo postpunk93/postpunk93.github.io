@@ -1,16 +1,26 @@
 import { content } from '../content'
-import { Reveal } from './Reveal'
 import { Section } from './Section'
 
 export function About() {
+  const { about, profile } = content
+
   return (
-    <Section id="about" eyebrow="О себе" title="Кто я и что умею">
-      <div className="max-w-3xl space-y-4">
-        {content.about.map((paragraph, index) => (
-          <Reveal key={paragraph.slice(0, 24)} delay={index * 0.05}>
-            <p className="leading-relaxed text-muted">{paragraph}</p>
-          </Reveal>
-        ))}
+    <Section id="about" folio="03" title="О себе" note="Пояснение к номеру">
+      <div className="about-grid">
+        <div className="about-prose">
+          {about.map((paragraph) => (
+            <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+          ))}
+        </div>
+        <aside className="pull">
+          <p className="pull-text">
+            «Рутину вокруг текста терпеть не умею — как только задача повторяется,
+            я превращаю её в инструмент.»
+          </p>
+          <p className="pull-sign">
+            {profile.name} · {profile.location}
+          </p>
+        </aside>
       </div>
     </Section>
   )

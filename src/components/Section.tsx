@@ -1,48 +1,28 @@
 import type { ReactNode } from 'react'
-import { Reveal } from './Reveal'
 
 interface SectionProps {
   id: string
+  folio: string
   title: string
-  eyebrow?: string
+  note?: string
   children: ReactNode
-  /** Оборачивать содержимое в контейнер max-w-5xl. Отключается в общем grid. */
-  contained?: boolean
 }
 
-export function Section({
-  id,
-  title,
-  eyebrow,
-  children,
-  contained = true,
-}: SectionProps) {
-  const body = (
-    <>
-      <Reveal>
-        {eyebrow ? (
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-muted">
-            {eyebrow}
-          </p>
-        ) : null}
-        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-          {title}
-        </h2>
-      </Reveal>
-      <div className="mt-8">{children}</div>
-    </>
-  )
-
+export function Section({ id, folio, title, note, children }: SectionProps) {
   return (
-    <section
-      id={id}
-      className="scroll-mt-24 border-t border-line py-16 sm:py-20"
-    >
-      {contained ? (
-        <div className="mx-auto max-w-5xl px-6">{body}</div>
-      ) : (
-        body
-      )}
+    <section id={id} className="section">
+      <div className="sheet section-grid">
+        <div className="section-margin" aria-hidden="true">
+          <span className="section-folio">{folio}</span>
+        </div>
+        <div className="section-main">
+          <header className="section-head">
+            <h2 className="section-title">{title}</h2>
+            {note ? <p className="section-note">{note}</p> : null}
+          </header>
+          {children}
+        </div>
+      </div>
     </section>
   )
 }

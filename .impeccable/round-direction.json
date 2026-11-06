@@ -1,0 +1,173 @@
+{
+  "title": "Выбрать визуальный мир",
+  "question": "Протокол приёмки — назначенный мир. Оставить его, взять альтернативу или перекрутить?",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "Протокол приёмки",
+      "kicker": "THE ROLL",
+      "lineage": "приёмочные протоколы и непрерывные распечатки на заводах",
+      "thesis": "Портфолио как протокол приёмки: каждое утверждение измерено, подписано и допущено.",
+      "palette": ["#e8ecd8", "#1b2117", "#5b3fa8", "#b23a2e", "#8a917e"],
+      "materials": ["непрерывная бумага", "матричная печать", "фиолетовый штамп"],
+      "viewport": "Шапка протокола на всю ширину: имя крупной узкой гарнитурой, под ним три измеренных показателя с отметками «годен», поверх — фиолетовый штамп. Ниже уже начинается таблица статей, а не пустой герой.",
+      "risk": "Бюрократический тон может задавить живой голос; спасают пометки на полях и настоящие заголовки.",
+      "raised": [
+        {
+          "from": "challenger-emission-rail",
+          "raise": "Калиброванная линия на полях: все секции крепятся к одной оси, а состояние читается штрихом и толщиной, не цветом."
+        },
+        {
+          "from": "declined-orienteering",
+          "raise": "Нумерованные контрольные точки: каждая секция отмечена на поле как пункт маршрута, с легендой обозначений."
+        },
+        {
+          "from": "declined-treasure",
+          "raise": "Происхождение каждого числа: сноска с площадкой и датой, как пометка на полях карты."
+        },
+        {
+          "from": "declined-glaze",
+          "raise": "Эффект инструмента как измеренный переход: шкала «до → после» с застывшим значением."
+        },
+        {
+          "from": "declined-plankton",
+          "raise": "След чтения: пройденные разделы оставляют слабую фосфорную отметку на поле."
+        },
+        {
+          "from": "declined-cutting",
+          "raise": "Фиксация прокрутки по перфорации: секции останавливаются на линии разрыва, бегунок показывает текущую позицию."
+        }
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html",
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "pick-newsprint",
+      "kind": "pick",
+      "label": "Полоса деловой газеты",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "деловые ежедневные газеты",
+      "thesis": "Портфолио как первая полоса: главная история — сам автор, две компетенции — рубрики.",
+      "palette": ["#e9e7e2", "#151515", "#c02b1f", "#6b6b66"],
+      "materials": ["газетная бумага", "типографская краска", "волосяные линейки"],
+      "viewport": "Передовица: имя как заголовок в пять колонок, под ним лид и две рубрики «Тексты» и «Инструменты» с цифрами; справа — колонка контактов как выходные данные.",
+      "risk": "Самый ожидаемый язык авторских портфолио: узнаётся мгновенно и так же мгновенно забывается.",
+      "html": ".impeccable/mocks/decision/pick-newsprint.html",
+      "comp": ".impeccable/mocks/decision/pick-newsprint.webp"
+    },
+    {
+      "id": "challenger-emission-rail",
+      "kind": "challenger",
+      "catalogId": "operate-c-emission-line-rail",
+      "verdict": "competitive",
+      "label": "Калиброванная линейка",
+      "lineage": "спектрографы и измерительные приборы",
+      "thesis": "Одна ось держит всю страницу: секции — деления, состояние — форма штриха.",
+      "palette": ["#171918", "#c9c4b4", "#e8c547", "#8fb8c9"],
+      "materials": ["графитовый континуум", "волосяные линии", "кость"],
+      "viewport": "Тёмное поле, слева одна вертикальная ось с делениями; активная секция раскрывается в большую плиту, остальные остаются штрихами. Справа — измеренные значения.",
+      "risk": "Тёмная инструментальная эстетика легко скатывается в sci-fi и теряет человека.",
+      "case": "Держит ясность: одна ось и штрихи вместо цвета. Проигрывает в узнавании — рекрутер не живёт в спектрографе.",
+      "hero": "https://impeccable.style/worlds/cards/operate-c-emission-line-rail-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/operate-c-emission-line-rail.webp",
+      "html": ".impeccable/mocks/decision/challenger-emission-rail.html",
+      "comp": ".impeccable/mocks/decision/challenger-emission-rail.webp"
+    },
+    {
+      "id": "declined-orienteering",
+      "kind": "challenger",
+      "catalogId": "notation-diagram-systems-orienteering-map",
+      "verdict": "declined",
+      "label": "Спортивная карта",
+      "lineage": "карты для ориентирования",
+      "thesis": "Профиль как трасса: рельеф — опыт, фиолетовая линия — карьера.",
+      "palette": ["#f4f2ea", "#7a5a3a", "#6a8f3f", "#7b3fa0"],
+      "materials": ["изолинии", "картографическая краска"],
+      "viewport": "Карта на весь экран с легендой и пронумерованной трассой из шести контрольных точек.",
+      "risk": "Читается как игра, а не как доказательство.",
+      "case": "Не узнают себя: рекрутер не ориентируется по карте, а профиль — не маршрут.",
+      "kept": "Нумерованные контрольные точки и легенда на полях.",
+      "hero": "https://impeccable.style/worlds/cards/notation-diagram-systems-orienteering-map-hero.webp"
+    },
+    {
+      "id": "declined-treasure",
+      "kind": "challenger",
+      "catalogId": "wayfinding-cartography-signage-salt-stiffened-treasure-map",
+      "verdict": "declined",
+      "label": "Солёная карта",
+      "lineage": "старые морские карты",
+      "thesis": "Навигация как догадка: следы, пометки и спрятанный клад.",
+      "palette": ["#d8c3a0", "#5a4630", "#a83b2e"],
+      "materials": ["пергамент", "железо-галловые чернила"],
+      "viewport": "Пергамент с компасом, потёртой линией маршрута и полями, исписанными вручную.",
+      "risk": "Атмосфера съедает ясность: где факт, а где выдумка — непонятно.",
+      "case": "Слишком много догадок; профиль требует ясности, а не расшифровки.",
+      "kept": "Происхождение каждого числа.",
+      "hero": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-salt-stiffened-treasure-map-hero.webp"
+    },
+    {
+      "id": "declined-glaze",
+      "kind": "challenger",
+      "catalogId": "clay-ceramics-fracture-glaze-river-shelf",
+      "verdict": "declined",
+      "label": "Полка с глазурью",
+      "lineage": "печи и керамические образцы",
+      "thesis": "Работа как обжиг: материалы текут, застывают и иногда прикипают.",
+      "palette": ["#f1eee8", "#1f4fa8", "#7fa7d9", "#b9b2a6"],
+      "materials": ["шамот", "кобальт", "стеклянная глазурь"],
+      "viewport": "Белая полка, ряд чашек с потёками глазури, рядом рецептурные карточки с номерами.",
+      "risk": "Красиво, но про керамику, а не про тексты и код.",
+      "case": "Материал не связан с работой героя: метафора ради метафоры.",
+      "kept": "Эффект как измеренный переход.",
+      "hero": "https://impeccable.style/worlds/cards/clay-ceramics-fracture-glaze-river-shelf-hero.webp"
+    },
+    {
+      "id": "declined-plankton",
+      "kind": "challenger",
+      "catalogId": "reefs-bioluminescent-nocturnal-plankton-wake-stars",
+      "verdict": "declined",
+      "label": "Ночной планктон",
+      "lineage": "биолюминесцентное море",
+      "thesis": "Движение оставляет свет: след чтения показывает, где был посетитель.",
+      "palette": ["#05080a", "#1f6feb", "#7fe3ff"],
+      "materials": ["чёрная вода", "фосфорный свет"],
+      "viewport": "Чёрное поле, тонкие светящиеся строки, за курсором тянется след.",
+      "risk": "Атмосфера без доказательств; на свету и в статике рассыпается.",
+      "case": "Не про работу и не про ясность: эффект ради эффекта.",
+      "kept": "След чтения на полях.",
+      "hero": "https://impeccable.style/worlds/cards/reefs-bioluminescent-nocturnal-plankton-wake-stars-hero.webp"
+    },
+    {
+      "id": "declined-cutting",
+      "kind": "challenger",
+      "catalogId": "operate-a-cutting-bench-select-rail",
+      "verdict": "declined",
+      "label": "Монтажный стол",
+      "lineage": "монтажные столы и киноплёнка",
+      "thesis": "Карьера как плёнка: кадры, склейки и метки на перфорации.",
+      "palette": ["#0d0d0d", "#e2662a", "#f2efe8"],
+      "materials": ["киноплёнка", "оранжевый флажок", "металлические штифты"],
+      "viewport": "Чёрный стол, перфорированная лента кадров через экран, оранжевый флажок на месте остановки.",
+      "risk": "Сильная медийная идентификация, но профиль — не монтажный лист.",
+      "case": "Держит узнавание для медиа, проигрывает в ясности: последовательность ≠ компетенция.",
+      "kept": "Фиксация прокрутки по перфорации.",
+      "hero": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": true },
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "Отраслевой стандарт",
+    "lineage": "личные портфолио в IT",
+    "thesis": "Чистая страница: имя, одна строка о себе, две колонки доказательств, синяя кнопка.",
+    "palette": ["#ffffff", "#111827", "#2563eb"],
+    "materials": ["чистая сетка", "крупный шрифт", "мягкие карточки"],
+    "viewport": "Крупное имя слева, короткий лид, две колонки карточек с цифрами, заметная кнопка Telegram.",
+    "risk": "Неотличимо от конкурентов — по определению.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

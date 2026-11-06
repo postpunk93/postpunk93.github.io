@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Полоса деловой газеты — первый экран</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1440px; height: 900px; overflow: hidden; }
+  body {
+    background: #e9e7e2;
+    color: #151515;
+    font-family: "PT Serif", "Liberation Serif", Georgia, serif;
+    padding: 26px 56px 30px;
+    position: relative;
+  }
+  .masthead {
+    display: flex; align-items: baseline; justify-content: space-between;
+    border-bottom: 3px solid #151515; padding-bottom: 6px;
+    font-family: "Golos Text", "Liberation Sans", Arial, sans-serif;
+    font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #444;
+  }
+  .masthead b { font-size: 22px; letter-spacing: .06em; color: #151515; }
+  .lead { display: grid; grid-template-columns: 1fr 320px; gap: 36px; margin-top: 18px; border-bottom: 1px solid #151515; padding-bottom: 18px; }
+  .rubric { font-family: "Golos Text", sans-serif; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: #c02b1f; margin-bottom: 6px; }
+  h1 {
+    font-family: "PT Serif", "Liberation Serif", Georgia, serif;
+    font-size: 112px; line-height: .88; font-weight: 700; letter-spacing: -.035em;
+  }
+  .sub { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 18px; }
+  .sub p { font-size: 22px; line-height: 1.35; }
+  .sub p:first-child::first-letter {
+    float: left; font-size: 72px; line-height: .8; padding: 6px 10px 0 0; font-weight: 700;
+  }
+  .right { border-left: 1px solid #151515; padding-left: 18px; font-family: "Golos Text", sans-serif; }
+  .right h2 { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 10px; }
+  .right p { font-size: 15px; line-height: 1.55; color: #3a3a3a; margin-bottom: 10px; }
+  .right .tg { margin-top: 14px; display: inline-block; background: #151515; color: #e9e7e2; padding: 10px 16px; font-size: 14px; letter-spacing: .04em; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
+  .col h2 { font-family: "Golos Text", sans-serif; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; border-bottom: 1px solid #151515; padding-bottom: 6px; margin-bottom: 10px; }
+  .col h2 span { float: right; color: #c02b1f; }
+  .stat { display: grid; grid-template-columns: 118px 1fr; gap: 14px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid rgba(21,21,21,.28); }
+  .stat b { font-size: 46px; line-height: .9; letter-spacing: -.03em; }
+  .stat p { font-size: 18px; line-height: 1.25; }
+  .stat p small { display: block; font-family: "Golos Text", sans-serif; font-size: 12px; letter-spacing: .04em; color: #666; margin-top: 2px; }
+  .folio { position: absolute; left: 56px; right: 56px; bottom: 18px; display: flex; justify-content: space-between; font-family: "Golos Text", sans-serif; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #666; border-top: 1px solid #151515; padding-top: 6px; }
+</style>
+</head>
+<body>
+  <div class="masthead">
+    <span>Сводка · личное дело</span>
+    <b>АЛЕКСАНДР КУЗАКИН</b>
+    <span>Томск · 06.11.2026</span>
+  </div>
+
+  <div class="lead">
+    <div>
+      <div class="rubric">Портфолио · две компетенции</div>
+      <h1>Пишет то,<br>что читают.<br>Собирает то,<br>чем пользуются.</h1>
+      <div class="sub">
+        <p>Два года делаю лонгриды для Хабра и VC: истории бизнеса и инженерии для МойСклада и ГРАНа. Три статьи набрали 141, 88 и 71 тыс. просмотров.</p>
+        <p>Восемь лет до этого — сайты на PHP и Yii2. Теперь собираю с ИИ инструменты, которые убирают рутину: автовёрстка, монтаж, мониторинг медиа.</p>
+      </div>
+    </div>
+    <div class="right">
+      <h2>В этом номере</h2>
+      <p><b>Тексты.</b> 8 лонгридов, 4 площадки, 141 тыс. у лучшей статьи.</p>
+      <p><b>Инструменты.</b> 4 проекта в продакшене, ими пользуются редакторы и продюсеры.</p>
+      <p><b>Опыт.</b> RuminLab, фриланс, Томск.</p>
+      <span class="tg">Написать в Telegram →</span>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <h2>Тексты <span>01</span></h2>
+      <div class="stat"><b>141</b><p>тыс. просмотров у статьи про производство на 90 млн<small>Хабр · МойСклад</small></p></div>
+      <div class="stat"><b>88</b><p>тыс. у истории про золотую жилу в кабине грузовика<small>Хабр · МойСклад</small></p></div>
+      <div class="stat"><b>71</b><p>тыс. у репортажа с китайского завода электроники<small>Хабр · ГРАН</small></p></div>
+    </div>
+    <div class="col">
+      <h2>Инструменты <span>02</span></h2>
+      <div class="stat"><b>4 ч → 10 мин</b><p>раскладка статьи на восемь площадок<small>article-layout · Python, Playwright</small></p></div>
+      <div class="stat"><b>5 → 4 дня</b><p>на выпуск YouTube-интервью<small>factory · WhisperX, ffmpeg</small></p></div>
+      <div class="stat"><b>1 лента</b><p>вместо ручного обхода медиа региона<small>media-scan · PHP, PostgreSQL</small></p></div>
+    </div>
+  </div>
+
+  <div class="folio">
+    <span>Передовица · личное портфолио</span>
+    <span>стр. 1 из 1</span>
+    <span>kuzakin.work@gmail.com</span>
+  </div>
+</body>
+</html>

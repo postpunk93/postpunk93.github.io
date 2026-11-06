@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T11:21:09.905Z",
+  "title": "Design System: Александр Кузакин — портфолио",
+  "extensions": {
+    "colorMeta": {
+      "newsprint": {
+        "role": "neutral",
+        "displayName": "Newsprint Stock",
+        "canonical": "#e8e6df",
+        "tonalRamp": [
+          "oklch(15% 0.004 94)",
+          "oklch(28% 0.006 94)",
+          "oklch(42% 0.008 94)",
+          "oklch(55% 0.010 94)",
+          "oklch(68% 0.011 94)",
+          "oklch(80% 0.012 94)",
+          "oklch(89% 0.012 94)",
+          "oklch(96% 0.010 94)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Press Black",
+        "canonical": "#14140f",
+        "tonalRamp": [
+          "oklch(15% 0.006 107)",
+          "oklch(26% 0.008 107)",
+          "oklch(38% 0.010 107)",
+          "oklch(50% 0.010 107)",
+          "oklch(62% 0.010 107)",
+          "oklch(75% 0.009 107)",
+          "oklch(87% 0.007 107)",
+          "oklch(95% 0.004 107)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#3f3e36",
+        "tonalRamp": [
+          "oklch(15% 0.007 101)",
+          "oklch(28% 0.011 101)",
+          "oklch(36% 0.013 101)",
+          "oklch(48% 0.013 101)",
+          "oklch(60% 0.012 101)",
+          "oklch(73% 0.011 101)",
+          "oklch(86% 0.008 101)",
+          "oklch(95% 0.005 101)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Dateline",
+        "canonical": "#5f5d54",
+        "tonalRamp": [
+          "oklch(15% 0.006 97)",
+          "oklch(28% 0.010 97)",
+          "oklch(40% 0.013 97)",
+          "oklch(52% 0.014 97)",
+          "oklch(64% 0.013 97)",
+          "oklch(76% 0.011 97)",
+          "oklch(87% 0.008 97)",
+          "oklch(95% 0.004 97)"
+        ]
+      },
+      "print-red": {
+        "role": "primary",
+        "displayName": "Print Red",
+        "canonical": "#b3261e",
+        "tonalRamp": [
+          "oklch(20% 0.075 28.7)",
+          "oklch(30% 0.120 28.7)",
+          "oklch(40% 0.155 28.7)",
+          "oklch(50% 0.178 28.7)",
+          "oklch(60% 0.165 28.7)",
+          "oklch(72% 0.130 28.7)",
+          "oklch(84% 0.085 28.7)",
+          "oklch(94% 0.040 28.7)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "rgba(20, 20, 15, 0.28)",
+        "tonalRamp": [
+          "rgba(20, 20, 15, 0.10)",
+          "rgba(20, 20, 15, 0.16)",
+          "rgba(20, 20, 15, 0.22)",
+          "rgba(20, 20, 15, 0.28)",
+          "rgba(20, 20, 15, 0.38)",
+          "rgba(20, 20, 15, 0.52)",
+          "rgba(20, 20, 15, 0.68)",
+          "rgba(20, 20, 15, 0.88)"
+        ]
+      },
+      "slab": {
+        "role": "neutral",
+        "displayName": "Slab",
+        "canonical": "#14140f",
+        "tonalRamp": [
+          "oklch(15% 0.006 107)",
+          "oklch(26% 0.008 107)",
+          "oklch(38% 0.010 107)",
+          "oklch(50% 0.010 107)",
+          "oklch(62% 0.010 107)",
+          "oklch(75% 0.009 107)",
+          "oklch(87% 0.007 107)",
+          "oklch(95% 0.004 107)"
+        ]
+      },
+      "slab-ink": {
+        "role": "neutral",
+        "displayName": "Slab Ink",
+        "canonical": "#f2efe4",
+        "tonalRamp": [
+          "oklch(15% 0.005 94)",
+          "oklch(28% 0.008 94)",
+          "oklch(42% 0.011 94)",
+          "oklch(56% 0.014 94)",
+          "oklch(70% 0.015 94)",
+          "oklch(81% 0.015 94)",
+          "oklch(90% 0.014 94)",
+          "oklch(95% 0.015 94)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Заголовок первой полосы, блок имени, крупные числа."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Названия разделов и крупный контактный ник."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Лид статьи, эффект инструмента, роль в опыте."
+      },
+      "deck": {
+        "displayName": "Deck",
+        "purpose": "Подзаголовок под главным заголовком, до 52ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Основной набор Golos Text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Источники, даты, номера, стек, подписи измерений."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "set-in",
+        "value": "0.62s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Каскадное появление первой полосы; задержки 0 / 60 / 110 / 160 / 210ms."
+      },
+      {
+        "name": "draw-rule",
+        "value": "0.8s 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Прорисовка красной линейки измерений scaleX(0 → 1)."
+      },
+      {
+        "name": "state",
+        "value": "0.15s ease",
+        "purpose": "Смена цвета, фона и подчёркивания при hover и в навигации."
+      },
+      {
+        "name": "running-head",
+        "value": "0.24s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Выезд колонтитула после 140px прокрутки."
+      },
+      {
+        "name": "edition-fade",
+        "value": "0.22s ease",
+        "purpose": "Смена фона и цвета при переключении выпуска, только при prefers-reduced-motion: no-preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "900px"
+      },
+      {
+        "name": "lg",
+        "value": "1120px"
+      },
+      {
+        "name": "sheet",
+        "value": "1320px"
+      }
+    ],
+    "themes": {
+      "base": "day",
+      "note": "Day tokens are the frontmatter colors; only deltas live here. Every edition swaps the same eight variables.",
+      "modes": {
+        "warm": {
+          "label": "Вечер",
+          "tokens": {
+            "paper": "#ede3d0",
+            "ink": "#221b13",
+            "ink-soft": "#4a3d2d",
+            "muted": "#6a5b48",
+            "accent": "#9c2f17",
+            "rule": "rgba(34, 27, 19, 0.28)",
+            "slab": "#221b13",
+            "slab-ink": "#f5ecdc"
+          }
+        },
+        "night": {
+          "label": "Ночь",
+          "tokens": {
+            "paper": "#141416",
+            "ink": "#ede8da",
+            "ink-soft": "#c9c3b4",
+            "muted": "#9b9588",
+            "accent": "#e2664c",
+            "rule": "rgba(237, 232, 218, 0.24)",
+            "slab": "#ede8da",
+            "slab-ink": "#141416"
+          }
+        }
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Плашка Telegram",
+      "kind": "custom",
+      "refersTo": "telegram-slab",
+      "description": "Главное действие: чёрная инверсная плашка в правой колонке первой полосы.",
+      "html": "<a class=\"ds-slab\" href=\"https://t.me/protopunk70\"><span>Написать в Telegram</span><svg class=\"ds-slab-arrow\" viewBox=\"0 0 18 10\" aria-hidden=\"true\"><path d=\"M0 5h17M12.6 1 17 5l-4.4 4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\"/></svg></a>",
+      "css": ".ds-slab{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--slab,#14140f);color:var(--slab-ink,#f2efe4);padding:13px 14px;font:400 11px/1.2 var(--font-mono,'PT Mono','Liberation Mono',monospace);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-radius:0;transition:background-color .15s ease,color .15s ease}.ds-slab:hover{background:var(--accent,#b3261e);color:var(--paper,#e8e6df)}.ds-slab:focus-visible{outline:2px solid var(--accent,#b3261e);outline-offset:3px}.ds-slab-arrow{width:20px;height:11px;flex:none}"
+    },
+    {
+      "name": "Колонтитул",
+      "kind": "nav",
+      "description": "Фиксированная полоса с текущим разделом, навигацией и красной линейкой прочитанного; выезжает после 140px.",
+      "html": "<header class=\"ds-running\"><div class=\"ds-running-inner\"><a class=\"ds-running-name\" href=\"#top\">А. Кузакин</a><p class=\"ds-running-section\">01 · Тексты</p><nav class=\"ds-running-nav\" aria-label=\"Разделы номера\"><a href=\"#texts\" aria-current=\"true\">Тексты</a><a href=\"#tools\">Инструменты</a><a href=\"#about\">О себе</a></nav><span class=\"ds-running-progress\"></span></div></header>",
+      "css": ".ds-running{position:relative;background:var(--paper,#e8e6df);border-bottom:1px solid var(--ink,#14140f);font:400 11px/1 var(--font-mono,'PT Mono','Liberation Mono',monospace)}.ds-running-inner{position:relative;display:flex;align-items:center;gap:24px;height:42px;padding:0 24px}.ds-running-name,.ds-running-nav a{font:400 11px/1 var(--font-mono,'PT Mono','Liberation Mono',monospace);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap}.ds-running-name{letter-spacing:.12em;color:var(--ink,#14140f);transition:color .15s ease}.ds-running-name:hover{color:var(--accent,#b3261e)}.ds-running-section{flex:1;margin:0;text-align:center;font:400 11px/1 var(--font-mono,'PT Mono','Liberation Mono',monospace);letter-spacing:.14em;text-transform:uppercase;color:var(--accent,#b3261e);white-space:nowrap}.ds-running-nav{display:flex;align-items:center;gap:18px}.ds-running-nav a{color:var(--muted,#5f5d54);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:color .15s ease,text-decoration-color .15s ease}.ds-running-nav a:hover,.ds-running-nav a[aria-current=\"true\"]{color:var(--ink,#14140f);text-decoration-color:var(--accent,#b3261e)}.ds-running-nav a:focus-visible{outline:2px solid var(--accent,#b3261e);outline-offset:3px}.ds-running-progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--accent,#b3261e);transform:scaleX(.62);transform-origin:0 50%}@media (max-width:640px){.ds-running-name{display:none}.ds-running-section{text-align:left}.ds-running-nav{display:none}}"
+    },
+    {
+      "name": "Заголовок раздела",
+      "kind": "custom",
+      "description": "Номер в левом поле за вертикальной линейкой, заголовок и капительная заметка справа.",
+      "html": "<div class=\"ds-section-grid\"><div class=\"ds-section-margin\"><span class=\"ds-folio\">01</span></div><div class=\"ds-section-main\"><header class=\"ds-section-head\"><h2 class=\"ds-section-title\">Тексты</h2><p class=\"ds-section-note\">8 публикаций · 369 тыс. просмотров</p></header></div></div>",
+      "css": ".ds-section-grid{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:30px}.ds-section-margin{border-right:1px solid var(--rule,rgba(20,20,15,.28));padding-top:7px}.ds-folio{font:400 11px/1 var(--font-mono,'PT Mono','Liberation Mono',monospace);letter-spacing:.12em;color:var(--accent,#b3261e)}.ds-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;border-bottom:1px solid var(--ink,#14140f);padding-bottom:12px;margin-bottom:28px}.ds-section-title{margin:0;font:700 clamp(2.3rem,4.4vw,3.5rem)/.95 var(--font-display,'PT Serif','Liberation Serif',Georgia,serif);letter-spacing:-.03em;color:var(--ink,#14140f)}.ds-section-note{margin:0;max-width:250px;padding-bottom:5px;text-align:right;font:400 12.5px/1.45 var(--font-display,'PT Serif','Liberation Serif',Georgia,serif);font-variant-caps:small-caps;letter-spacing:.06em;color:var(--muted,#5f5d54)}@media (max-width:640px){.ds-section-grid{grid-template-columns:1fr}.ds-section-margin{border-right:0;border-bottom:1px solid var(--rule,rgba(20,20,15,.28));padding:0 0 8px;margin-bottom:14px}.ds-section-head{flex-direction:column;align-items:flex-start;gap:8px}.ds-section-note{max-width:none;padding-bottom:0;text-align:left}}"
+    },
+    {
+      "name": "Строка индекса статьи",
+      "kind": "card",
+      "description": "Номер, название, источник и просмотры в одну строку под волосяной линейкой.",
+      "html": "<a class=\"ds-index-row\" href=\"#\"><span class=\"ds-index-num\">02</span><span class=\"ds-index-title\">Я нашел золотую жилу в кабине грузовика. Сейчас продаю на 340 млн в год</span><span class=\"ds-index-source\">Хабр · МойСклад</span><span class=\"ds-index-views\">88</span></a>",
+      "css": ".ds-index-row{display:grid;grid-template-columns:38px minmax(0,1fr) 190px 100px;gap:18px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--rule,rgba(20,20,15,.28));color:inherit;text-decoration:none}.ds-index-num{font:400 11px/1 var(--font-mono,'PT Mono','Liberation Mono',monospace);color:var(--accent,#b3261e)}.ds-index-title{font:400 19px/1.3 var(--font-display,'PT Serif','Liberation Serif',Georgia,serif);transition:color .15s ease}.ds-index-source{font:400 11px/1.2 var(--font-mono,'PT Mono','Liberation Mono',monospace);letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#5f5d54)}.ds-index-views{font:700 20px/1 var(--font-display,'PT Serif','Liberation Serif',Georgia,serif);text-align:right;white-space:nowrap}.ds-index-row:hover .ds-index-title{color:var(--accent,#b3261e)}.ds-index-row:focus-visible{outline:2px solid var(--accent,#b3261e);outline-offset:3px}@media (max-width:640px){.ds-index-row{grid-template-columns:26px minmax(0,1fr) 72px;gap:10px;padding:10px 0}.ds-index-source{display:none}.ds-index-title{font-size:16px}.ds-index-views{font-size:16px}}"
+    },
+    {
+      "name": "Стенд инструмента",
+      "kind": "card",
+      "description": "Колонка инструмента: моноширинный номер и имя, крупный эффект, описание и стек.",
+      "html": "<article class=\"ds-tool\"><h3 class=\"ds-tool-name\"><span>01</span><span>article-layout</span></h3><p class=\"ds-tool-effect\">4 часа в понедельник<svg class=\"ds-tool-arrow\" viewBox=\"0 0 18 10\" aria-hidden=\"true\"><path d=\"M0 5h17M12.6 1 17 5l-4.4 4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\"/></svg>10 минут</p><p class=\"ds-tool-summary\">Раскладывает готовую статью на восемь площадок: VC, DTF, Пикабу, Хабр, Дзен и другие. Коллега пишет запрос по-русски — и обходится без кода.</p><p class=\"ds-tool-stack\">Python · Playwright · Claude Code</p></article>",
+      "css": ".ds-tool{display:flex;flex-direction:column;padding:22px 0 24px;border-top:1px solid var(--rule,rgba(20,20,15,.28));border-bottom:1px solid var(--rule,rgba(20,20,15,.28));color:var(--ink,#14140f)}.ds-tool-name{margin:0;font:400 11px/1.2 var(--font-mono,'PT Mono','Liberation Mono',monospace);letter-spacing:.08em;text-transform:uppercase;color:var(--accent,#b3261e)}.ds-tool-name span{margin-right:8px;color:var(--muted,#5f5d54)}.ds-tool-effect{margin:12px 0 0;font:700 clamp(1.5rem,2.2vw,1.9rem)/1.08 var(--font-display,'PT Serif','Liberation Serif',Georgia,serif);letter-spacing:-.02em;text-wrap:balance}.ds-tool-arrow{display:inline-block;width:1.15em;height:.64em;margin:0 .08em;vertical-align:-.04em;overflow:visible}.ds-tool-summary{margin:10px 0 0;max-width:44ch;font:400 14.5px/1.55 var(--font-body,'Golos Text','Helvetica Neue',Arial,sans-serif);color:var(--ink-soft,#3f3e36);text-wrap:pretty}.ds-tool-stack{margin:14px 0 0;font:400 11px/1.4 var(--font-mono,'PT Mono','Liberation Mono',monospace);letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#5f5d54)}"
+    },
+    {
+      "name": "Контактный ник",
+      "kind": "custom",
+      "refersTo": "contact-handle",
+      "description": "Крупный Telegram-ник с толстым подчёркиванием — финальное действие страницы.",
+      "html": "<a class=\"ds-contact-handle\" href=\"https://t.me/protopunk70\">@protopunk70<svg class=\"ds-contact-arrow\" viewBox=\"0 0 18 10\" aria-hidden=\"true\"><path d=\"M0 5h17M12.6 1 17 5l-4.4 4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\"/></svg></a>",
+      "css": ".ds-contact-handle{display:inline-flex;align-items:baseline;gap:14px;margin-top:8px;padding-bottom:2px;border-bottom:2px solid var(--ink,#14140f);font:700 clamp(2.4rem,4.6vw,4rem)/1 var(--font-display,'PT Serif','Liberation Serif',Georgia,serif);letter-spacing:-.03em;color:var(--ink,#14140f);text-decoration:none;transition:color .15s ease,border-color .15s ease}.ds-contact-handle:hover{color:var(--accent,#b3261e);border-color:var(--accent,#b3261e)}.ds-contact-handle:focus-visible{outline:2px solid var(--accent,#b3261e);outline-offset:3px}.ds-contact-arrow{width:.55em;height:.3em;align-self:center;flex:none}"
+    },
+    {
+      "name": "Кнопка выпуска",
+      "kind": "button",
+      "refersTo": "edition-switch",
+      "description": "Переключатель трёх выпусков: квадратная красная точка и моноширинная подпись в рамке 1px.",
+      "html": "<button type=\"button\" class=\"ds-edition-switch\" aria-label=\"Сменить тему, сейчас: Утро\" title=\"Сменить тему\"><span class=\"ds-edition-dot\" aria-hidden=\"true\"></span><span>Выпуск: Утро</span></button>",
+      "css": ".ds-edition-switch{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border:1px solid var(--ink,#14140f);border-radius:0;background:transparent;color:var(--ink,#14140f);font:400 11px/1 var(--font-mono,'PT Mono','Liberation Mono',monospace);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;cursor:pointer;transition:background-color .15s ease,color .15s ease}.ds-edition-switch:hover{background:var(--ink,#14140f);color:var(--paper,#e8e6df)}.ds-edition-switch:focus-visible{outline:2px solid var(--accent,#b3261e);outline-offset:3px}.ds-edition-dot{width:6px;height:6px;background:var(--accent,#b3261e);flex:none}.ds-edition-switch:hover .ds-edition-dot{background:var(--paper,#e8e6df)}"
+    },
+    {
+      "name": "Полоса измерений",
+      "kind": "custom",
+      "description": "Три доказательства с подписями и источниками; красная линейка поверх верхней линейки 3px.",
+      "html": "<div class=\"ds-measures\"><div class=\"ds-measure\"><p class=\"ds-measure-value\">141 тыс.</p><p class=\"ds-measure-label\">просмотров у лонгрида про производство на 90 млн</p><p class=\"ds-measure-source\">Хабр · МойСклад</p></div><div class=\"ds-measure\"><p class=\"ds-measure-value\">4 ч<svg class=\"ds-measure-arrow\" viewBox=\"0 0 18 10\" aria-hidden=\"true\"><path d=\"M0 5h17M12.6 1 17 5l-4.4 4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\"/></svg>10 мин</p><p class=\"ds-measure-label\">раскладка статьи на восемь площадок</p><p class=\"ds-measure-source\">article-layout</p></div><div class=\"ds-measure\"><p class=\"ds-measure-value\">4</p><p class=\"ds-measure-label\">инструмента в продакшене, не прототипа</p><p class=\"ds-measure-source\">собраны мной</p></div></div>",
+      "css": ".ds-measures{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:3px solid var(--ink,#14140f);border-bottom:1px solid var(--ink,#14140f)}.ds-measures::before{content:'';position:absolute;left:0;right:0;top:-3px;height:3px;background:var(--accent,#b3261e);transform:scaleX(1);transform-origin:0 50%;animation:ds-draw-rule .8s .4s cubic-bezier(.16,1,.3,1) both}.ds-measure{padding:14px 20px 12px;border-left:1px solid var(--rule,rgba(20,20,15,.28))}.ds-measure:first-child{border-left:0;padding-left:0}.ds-measure-value{margin:0;font:700 clamp(1.7rem,2.8vw,2.5rem)/1 var(--font-display,'PT Serif','Liberation Serif',Georgia,serif);letter-spacing:-.025em;white-space:nowrap}.ds-measure-arrow{display:inline-block;width:1.15em;height:.64em;margin:0 .08em;vertical-align:-.04em;overflow:visible}.ds-measure-label{margin:7px 0 0;max-width:32ch;font:400 13px/1.35 var(--font-body,'Golos Text','Helvetica Neue',Arial,sans-serif);color:var(--ink-soft,#3f3e36)}.ds-measure-source{margin:6px 0 0;font:400 11px/1.2 var(--font-mono,'PT Mono','Liberation Mono',monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--muted,#5f5d54)}@keyframes ds-draw-rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}@media (prefers-reduced-motion:reduce){.ds-measures::before{animation:none;transform:scaleX(1)}}@media (max-width:640px){.ds-measures{grid-template-columns:1fr}.ds-measure{display:block;border-left:0;border-top:1px solid var(--rule,rgba(20,20,15,.28));padding:11px 0 12px}.ds-measure:first-child{border-top:0}.ds-measure-value{font-size:1.75rem;white-space:normal}.ds-measure-label{max-width:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "«Полоса деловой газеты» (The Business Daily)",
+    "overview": "Портфолио устроено как первая полоса деловой газеты об одном человеке. Сверху — шапка с датой и именем, набранным крупной антиквой; под ней рубрика, заголовок в четыре строки и дек; справа — «В номере» и чёрная плашка Telegram; под заголовком — полоса измерений с цифрами и источниками. Доказательства стоят на месте приветствия: читатель встречает 141 тыс. просмотров и «4 ч → 10 мин», а не аватар и слоган.\n\nМатериал — холодная газетная бумага, чёрная краска и печатный красный. Всё построено на линейках: волосяные (1px) делят строки и колонки, толстые (3px) закрывают шапку, полосу измерений, лид и подвал. Ни одного скругления, ни одной тени, ни одного градиента; глубина создаётся весом линейки, инверсией бумага/плашка и перепадом кегля от 84px до 11px.\n\nПлотность высокая, но не тесная: воздух дан заголовкам и полосам измерений, строки индекса идут в 11px по вертикали, метаданные — только моноширинным капительным набором. Вёрстка держится на одном листе шириной 1320px и последовательно сжимается до одной колонки на телефоне. Три выпуска — «Утро», «Вечер», «Ночь» — меняют только краску, не конструкцию.",
+    "keyCharacteristics": [
+      "Первый экран отвечает «кто / что умеет / чем подтверждено» до любого приветствия.",
+      "Один лист, волосяные линейки, нулевые радиусы, ни одной тени; группировка — линейками и полями, а не карточками.",
+      "Три голоса: PT Serif — заголовки, Golos Text — набор, PT Mono — колонцифры и метаданные.",
+      "Красный работает как измерительный знак: номер раздела, рубрика в колонтитуле, линейка прочитанного, точка выпуска.",
+      "Три темы — один набор из восьми переменных; day канонический."
+    ],
+    "rules": [
+      {
+        "name": "The Newsprint Stock Rule",
+        "body": "Фон — газетная бумага, а не тёплый крем. Не подкрашивать её в беж, не осветлять до белого и не заменять «более чистым» оттенком: холодная бумага и есть материал мира.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Is a Measure Rule",
+        "body": "Красный — измерительный знак, не заливка. Он допустим на колонцифрах, рубрике колонтитула, линейке прочитанного, точке выпуска, верхней линейке измерений и в состояниях наведения; одна красная метка на область. Красный никогда не несёт основной текст и не заливает блок площадью больше плашки.",
+        "section": "colors"
+      },
+      {
+        "name": "The Edition Swap Rule",
+        "body": "Все три выпуска собираются из одного набора переменных. Новая тема — это восемь значений, а не ветка стилей; после любой правки проверять контраст `ink` на `paper` и `slab-ink` на `slab`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Voices Rule",
+        "body": "PT Serif говорит заголовками и цифрами, Golos Text — читаемым текстом, PT Mono — служебными подписями. Не набирать заголовок гротеском, метаданные антиквой, а тело — моно.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Kicker Rule",
+        "body": "Над заголовком нет надзаголовка, эйбрау и служебной строки. Раздел открывается номером в левом поле и самим заголовком; номер живёт в маргиналии, а не над текстом.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tight Leading Rule",
+        "body": "Крупная антиква набирается плотно: 0.92–0.95 интерлиньяжа и отрицательный трекинг от −0.02em до −0.035em. Капительные рубрики, наоборот, получают разрядку 0.05–0.1em; никогда не разряжать крупный заголовок.",
+        "section": "typography"
+      },
+      {
+        "name": "The Fold Rule",
+        "body": "Порядок первого экрана фиксирован: шапка → заголовок и дек → полоса измерений → анонсы, Telegram — в правой колонке. Ничто не вставляется между заголовком и доказательствами; на мобильном Telegram поднимается первым в правой колонке, но остаётся после измерений.",
+        "section": "layout"
+      },
+      {
+        "name": "The Proof Before Greeting Rule",
+        "body": "Первый экран не начинается с приветствия, аватара или слогана: после заголовка сразу идут три измерения с цифрами и источниками. Любой новый блок «обо мне» ставится ниже доказательств, не выше.",
+        "section": "layout"
+      },
+      {
+        "name": "The Marginal Folio Rule",
+        "body": "Номер раздела всегда стоит в левом поле, за вертикальной линейкой, на одной линии с заголовком. Он не превращается в надзаголовок, не центрируется и не ставится перед названием в одну строку.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Stock Rule",
+        "body": "Лист плоский. Никаких теней, размытий, стекла и подъёма по hover. Если элемент нужно отделить — использовать линейку, инверсию или поле, не глубину.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Структуру рисуют линейки, а не рамки карточек. Внутри блока — 1px `rule`; граница раздела и закрывающая линия — 1px или 3px `ink`. Не обводить блок со всех четырёх сторон и не собирать «карточку» из линейки и фона.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do открывать раздел номером в левом поле и заголовком с нижней линейкой; номер — в маргиналии, заголовок — первый текст раздела.",
+      "Do держать первый экран в порядке «шапка → заголовок и дек → измерения → анонсы», с Telegram в правой колонке.",
+      "Do набирать крупную антикву плотно: 0.92–0.95 интерлиньяжа и −0.02…−0.035em трекинга; тело — Golos Text 16px/1.5.",
+      "Do строить структуру линейками: 1px rule внутри, 1px/3px ink на границах разделов и закрывающих линиях, 2px print-red только для прогресса и подчёркивания контакта.",
+      "Do оставлять красному роль метки: колонцифры, текущий раздел, прогресс, точка выпуска, hover-состояния — одна метка на область.",
+      "Do использовать PT Mono только для служебного: источники, даты, номера, стек, подписи; не ниже 11px.",
+      "Do держать все три выпуска на одних восьми переменных и после правки проверять контраст ink/paper и slab-ink/slab."
+    ],
+    "donts": [
+      "Don't добавлять радиусы, тени, градиенты, стекло и карточные контейнеры; группировку делают линейки и поля.",
+      "Don't ставить надзаголовок, эйбрау или служебную строку над заголовком; номер раздела живёт в поле, а не над названием.",
+      "Don't вводить центрированный аватар, слоган и сетку равных карточек — мир строится на доказательствах и линейках.",
+      "Don't красить красным основной текст, большие заливки и декоративные подчёркивания вне описанных состояний.",
+      "Don't набирать заголовки Golos Text, а метаданные — PT Serif; не смешивать роли трёх голосов.",
+      "Don't хардкодить цвета темы в компонентах: только переменные --paper, --ink, --ink-soft, --muted, --accent, --rule, --slab, --slab-ink.",
+      "Don't добавлять фоновую или скролл-анимацию; авторская анимация — только появление первой полосы каскадом и прорисовка красной линейки измерений, плюс переходы состояний.",
+      "Don't вводить растровые изображения, фото и декоративные иконки; единственный рисунок — стрелка, нарисованная штрихом 1.25."
+    ]
+  }
+}

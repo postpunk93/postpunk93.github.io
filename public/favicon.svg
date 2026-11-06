@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="АК">
-  <rect width="64" height="64" rx="14" fill="#14161a"/>
-  <text x="32" y="43" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="27" font-weight="600" fill="#f6f6f4">АК</text>
+  <rect width="64" height="64" fill="#14140f"/>
+  <rect x="6" y="6" width="52" height="52" fill="none" stroke="#e8e6df" stroke-opacity=".45"/>
+  <text x="32" y="39" text-anchor="middle" font-family="Georgia, 'PT Serif', serif" font-size="23" font-weight="700" letter-spacing="1" fill="#e8e6df">АК</text>
+  <rect x="14" y="48" width="36" height="2" fill="#b3261e"/>
 </svg>

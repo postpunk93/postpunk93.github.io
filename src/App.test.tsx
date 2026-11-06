@@ -25,8 +25,12 @@ describe('App', () => {
   it('рендерит карточки статей и инструментов из контента', () => {
     render(<App />)
 
-    expect(screen.getByText(content.texts[0].title)).toBeInTheDocument()
-    expect(screen.getByText(content.tools[0].name)).toBeInTheDocument()
+    expect(
+      screen.getAllByText(content.texts[0].title).length,
+    ).toBeGreaterThan(0)
+    expect(
+      screen.getAllByText(content.tools[0].name).length,
+    ).toBeGreaterThan(0)
     expect(
       screen.getAllByText(content.contacts[0].value).length,
     ).toBeGreaterThan(0)
