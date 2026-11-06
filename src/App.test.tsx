@@ -22,6 +22,16 @@ describe('App', () => {
     ).toBe(true)
   })
 
+  it('рендерит карточки статей и инструментов из контента', () => {
+    render(<App />)
+
+    expect(screen.getByText(content.texts[0].title)).toBeInTheDocument()
+    expect(screen.getByText(content.tools[0].name)).toBeInTheDocument()
+    expect(
+      screen.getAllByText(content.contacts[0].value).length,
+    ).toBeGreaterThan(0)
+  })
+
   it('даёт кнопке смены темы доступное имя', () => {
     render(<App />)
 
