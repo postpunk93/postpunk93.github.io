@@ -11,8 +11,14 @@ import { Tools } from './components/Tools'
 export default function App() {
   return (
     <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-surface focus:px-4 focus:py-2 focus:text-sm focus:shadow-lg"
+      >
+        Перейти к содержанию
+      </a>
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <About />
         <div className="mx-auto max-w-5xl px-6">
