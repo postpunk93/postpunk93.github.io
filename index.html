@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Александр Кузакин — лонгриды для Хабра и VC, инструменты на ИИ. Томск, удалённо." />
     <title>Александр Кузакин — портфолио</title>
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var valid = stored === 'day' || stored === 'warm' || stored === 'night'
+          var theme = valid
+            ? stored
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'night'
+              : 'day'
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme =
+            theme === 'night' ? 'dark' : 'light'
+        } catch (error) {
+          /* хранилище недоступно — остаётся тема по умолчанию из разметки */
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
