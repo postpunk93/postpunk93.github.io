@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru" data-theme="day" data-edition="automation">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Александр Кузакин — AI-автоматизатор. Собираю AI-инструменты и довожу до продакшена. Три публичных репозитория, автовёрстка статей и монтаж видео у коллег без кода." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="Александр Кузакин — AI-автоматизатор" />
+    <meta
+      property="og:description"
+      content="Собираю AI-инструменты и довожу их до продакшена. Автовёрстка статей и черновой монтаж видео работают у коллег без кода."
+    />
+    <meta name="theme-color" content="#e8e6df" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141416" media="(prefers-color-scheme: dark)" />
+    <title>Александр Кузакин — AI-автоматизатор</title>
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var valid = stored === 'day' || stored === 'warm' || stored === 'night'
+          var theme = valid
+            ? stored
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'night'
+              : 'day'
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme =
+            theme === 'night' ? 'dark' : 'light'
+        } catch (error) {
+          /* хранилище недоступно — остаётся тема по умолчанию из разметки */
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
