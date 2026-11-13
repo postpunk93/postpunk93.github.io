@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, type ComponentType } from 'react'
 import { About } from './components/About'
 import { Contacts } from './components/Contacts'
 import { Experience } from './components/Experience'
@@ -9,8 +9,23 @@ import { Skills } from './components/Skills'
 import { Texts } from './components/Texts'
 import { Tools } from './components/Tools'
 import { Video } from './components/Video'
+import { contentFor, getEdition } from './content'
+import { SiteProvider } from './content/context'
+import type { Edition, SectionId } from './content/types'
 
-export default function App() {
+const sectionComponents: Record<SectionId, ComponentType> = {
+  video: Video,
+  texts: Texts,
+  tools: Tools,
+  about: About,
+  experience: Experience,
+  skills: Skills,
+  contacts: Contacts,
+}
+
+export default function App({ edition }: { edition?: Edition } = {}) {
+  const site = contentFor(edition ?? getEdition())
+
   useEffect(() => {
     const id = window.location.hash.slice(1)
     if (!id) return
@@ -25,22 +40,19 @@ export default function App() {
   }, [])
 
   return (
-    <>
+    <SiteProvider site={site}>
       <a className="skip" href="#main">
         Перейти к содержанию
       </a>
       <Header />
       <main id="main">
         <Hero />
-        <Video />
-        <Texts />
-        <Tools />
-        <About />
-        <Experience />
-        <Skills />
-        <Contacts />
+        {site.order.map((id) => {
+          const SectionComponent = sectionComponents[id]
+          return <SectionComponent key={id} />
+        })}
       </main>
       <Footer />
-    </>
+    </SiteProvider>
   )
 }

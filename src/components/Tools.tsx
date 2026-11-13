@@ -1,17 +1,13 @@
-import { content } from '../content'
+import { useSite, useSection } from '../content/context'
 import { ArrowText } from './Arrow'
 import { Section } from './Section'
 
 export function Tools() {
-  const { tools } = content
+  const { id, folio, title, note } = useSection('tools')
+  const { tools } = useSite()
 
   return (
-    <Section
-      id="tools"
-      folio="02"
-      title="Инструменты"
-      note={`${tools.length} инструмента · собраны и работают`}
-    >
+    <Section id={id} folio={folio} title={title} note={note}>
       <div className="tools-grid">
         {tools.map((tool, index) => (
           <article className="tool" key={tool.name}>

@@ -1,26 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
+import { folioFor } from '../content'
+import { useSite } from '../content/context'
 import { ThemeToggle } from './ThemeToggle'
 
-const sections = [
-  { id: 'texts', label: '01 · Тексты' },
-  { id: 'tools', label: '02 · Инструменты' },
-  { id: 'about', label: '03 · О себе' },
-  { id: 'experience', label: '04 · Опыт' },
-  { id: 'skills', label: '05 · Навыки' },
-  { id: 'contacts', label: '06 · Контакты' },
-]
-
-const navigation = [
-  { href: '#texts', label: 'Тексты' },
-  { href: '#tools', label: 'Инструменты' },
-  { href: '#about', label: 'О себе' },
-  { href: '#experience', label: 'Опыт' },
-  { href: '#contacts', label: 'Контакты' },
-]
-
 export function Header() {
+  const site = useSite()
+  const navigation = site.order
+    .filter((id) => id !== 'video' && id !== 'skills')
+    .map((id) => ({
+      id,
+      href: `#${id}`,
+      label: `${folioFor(site.order.indexOf(id))} · ${site.sections[id].title}`,
+    }))
   const [visible, setVisible] = useState(false)
-  const [active, setActive] = useState(sections[0].id)
+  const [active, setActive] = useState(navigation[0].id)
   const progressRef = useRef<HTMLSpanElement>(null)
   const frameRef = useRef(0)
 
@@ -36,15 +29,15 @@ export function Header() {
         progressRef.current.style.transform = `scaleX(${ratio})`
       }
 
-      let current = sections[0].id
-      for (const section of sections) {
-        const element = document.getElementById(section.id)
+      let current = navigation[0].id
+      for (const item of navigation) {
+        const element = document.getElementById(item.id)
         if (element && element.getBoundingClientRect().top <= 160) {
-          current = section.id
+          current = item.id
         }
       }
       if (y + window.innerHeight >= document.documentElement.scrollHeight - 4) {
-        current = sections[sections.length - 1].id
+        current = navigation[navigation.length - 1].id
       }
       setActive((previous) => (previous === current ? previous : current))
     }
@@ -63,7 +56,10 @@ export function Header() {
     }
   }, [])
 
-  const current = sections.find((section) => section.id === active) ?? sections[0]
+  const current =
+    navigation.find((item) => item.id === active) ?? navigation[0]
+  const [firstName, ...lastName] = site.profile.name.split(' ')
+  const shortName = `${firstName[0]}. ${lastName.join(' ')}`
 
   return (
     <header
@@ -73,17 +69,15 @@ export function Header() {
     >
       <div className="sheet running-inner">
         <a href="#top" className="running-name">
-          А. Кузакин
+          {shortName}
         </a>
         <p className="running-section">{current.label}</p>
-        <nav className="running-nav" aria-label="Разделы номера">
+        <nav className="running-nav" aria-label="Разделы страницы">
           {navigation.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              aria-current={
-                `#${active}` === item.href ? 'true' : undefined
-              }
+              aria-current={active === item.id ? 'true' : undefined}
             >
               {item.label}
             </a>

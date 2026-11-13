@@ -1,16 +1,14 @@
-import { content } from '../content'
+import { useSite, useSection } from '../content/context'
 import { Section } from './Section'
 
 export function Experience() {
+  const { id, folio, title, note } = useSection('experience')
+  const { experience } = useSite()
+
   return (
-    <Section
-      id="experience"
-      folio="04"
-      title="Опыт"
-      note="Журнал эксплуатации · 2016—2026"
-    >
+    <Section id={id} folio={folio} title={title} note={note}>
       <div className="exp">
-        {content.experience.map((item) => (
+        {experience.map((item) => (
           <div className="exp-row" key={item.company}>
             <div className="exp-meta">
               <p className="exp-period">{item.period}</p>
