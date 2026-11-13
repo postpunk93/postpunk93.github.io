@@ -142,13 +142,15 @@ export const content: SiteContent = {
         'Раскладывает готовую статью на восемь площадок: VC, DTF, Пикабу, Хабр, Дзен и другие. Коллега пишет запрос по-русски — и обходится без кода.',
       stack: ['Python', 'Playwright', 'Claude Code'],
       effect: '4 часа в понедельник\u00A0→ 10 минут',
+      href: 'https://github.com/postpunk93/article-layout',
     },
     {
-      name: 'factory',
+      name: 'video-factory',
       summary:
         'Черновой монтаж YouTube-интервью: расшифровка, поиск реплик сценария, резка по тишине — готовый таймлайн для DaVinci.',
       stack: ['Python', 'WhisperX', 'ffmpeg'],
       effect: '5 дней\u00A0→ 4 дня на выпуск',
+      href: 'https://github.com/postpunk93/video-factory',
     },
     {
       name: 'media-scan',
@@ -160,9 +162,10 @@ export const content: SiteContent = {
     {
       name: 'vacancy-hunter',
       summary:
-        'Следит за hh.ru и zarplata.ru, отбирает вакансии по моим запросам и присылает дайджест в Telegram.',
+        'Собирает вакансии с четырёх площадок — hh.ru, superjob, rabota.ru, zarplata.ru — оценивает по профилю и присылает дайджест в Telegram.',
       stack: ['Python', 'SQLite', 'Telegram Bot API'],
       effect: 'Вместо ежедневного скроллинга — один дайджест',
+      href: 'https://github.com/postpunk93/vacancy-hunter',
     },
   ],
 

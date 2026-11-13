@@ -17,7 +17,13 @@ export function Tools() {
           <article className="tool" key={tool.name}>
             <h3 className="tool-name">
               <span>{String(index + 1).padStart(2, '0')}</span>
-              <span>{tool.name}</span>
+              {tool.href ? (
+                <a href={tool.href} target="_blank" rel="noreferrer">
+                  {tool.name}
+                </a>
+              ) : (
+                <span>{tool.name}</span>
+              )}
             </h3>
             <p className="tool-effect">
               <ArrowText text={tool.effect} />

@@ -26,6 +26,14 @@ describe('content', () => {
     }
   })
 
+  it('ведёт с инструментов в опубликованные репозитории', () => {
+    const linked = content.tools.filter((tool) => tool.href)
+    expect(linked.length).toBeGreaterThanOrEqual(3)
+    for (const tool of linked) {
+      expect(tool.href).toMatch(/^https:\/\/github\.com\/postpunk93\//)
+    }
+  })
+
   it('дает контактам рабочие ссылки', () => {
     expect(content.contacts.length).toBeGreaterThan(0)
     for (const contact of content.contacts) {

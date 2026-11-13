@@ -37,6 +37,13 @@ export function Hero() {
           <aside className="front-rail" data-set aria-label="Содержание номера">
             <p className="rail-label">В номере</p>
             <nav className="contents" aria-label="Содержание">
+              <a href="#video">
+                <span className="n">00</span>
+                <span>
+                  Видео
+                  <small>минута</small>
+                </span>
+              </a>
               <a href="#texts">
                 <span className="n">01</span>
                 <span>
@@ -55,7 +62,7 @@ export function Hero() {
                 <span className="n">03</span>
                 <span>
                   Опыт
-                  <small>RumlinLab, фриланс, Томск</small>
+                  <small>RuminLab, фриланс, Томск</small>
                 </span>
               </a>
             </nav>

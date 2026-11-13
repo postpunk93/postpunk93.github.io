@@ -8,6 +8,7 @@ import { Hero } from './components/Hero'
 import { Skills } from './components/Skills'
 import { Texts } from './components/Texts'
 import { Tools } from './components/Tools'
+import { Video } from './components/Video'
 
 export default function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ export default function App() {
       <Header />
       <main id="main">
         <Hero />
+        <Video />
         <Texts />
         <Tools />
         <About />
