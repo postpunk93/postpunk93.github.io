@@ -1,14 +1,17 @@
-import { content, editionDate, editionYear } from '../content'
+import { editionDate, editionYear } from '../content'
+import { useSite } from '../content/context'
 
 export function Footer() {
+  const { profile } = useSite()
+
   return (
     <footer className="footer">
       <div className="sheet footer-inner">
         <p>
-          © {editionYear} {content.profile.name}
+          © {editionYear} {profile.name}
         </p>
         <p>
-          Личное портфолио · выпуск от {editionDate} · набрано PT Serif, Golos
+          Личное портфолио · обновлено {editionDate} · набрано PT Serif, Golos
           Text, PT Mono
         </p>
         <a className="to-top" href="#top">

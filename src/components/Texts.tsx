@@ -1,23 +1,15 @@
-import { content } from '../content'
+import { useSite, useSection } from '../content/context'
 import { Section } from './Section'
 
 export function Texts() {
-  const { texts } = content
+  const { id, folio, title, note } = useSection('texts')
+  const { texts } = useSite()
   const featured = texts[0]
   const rest = texts.slice(1)
   const [amount, unit] = featured.views.split(' ')
-  const totalViews = texts.reduce((sum, text) => {
-    const match = text.views.match(/^(\d+)/)
-    return sum + (match ? Number(match[1]) : 0)
-  }, 0)
 
   return (
-    <Section
-      id="texts"
-      folio="01"
-      title="Тексты"
-      note={`${texts.length} публикаций · ${totalViews} тыс. просмотров`}
-    >
+    <Section id={id} folio={folio} title={title} note={note}>
       <article className="featured">
         <div>
           <p className="featured-source">{featured.source}</p>

@@ -1,9 +1,23 @@
-import { content, editionDate } from '../content'
+import { Fragment } from 'react'
+import { editionDate, folioFor } from '../content'
+import { useSite } from '../content/context'
 import { Arrow, ArrowText } from './Arrow'
 import { ThemeToggle } from './ThemeToggle'
 
 export function Hero() {
-  const { profile, proof, texts, contacts } = content
+  const site = useSite()
+  const {
+    profile,
+    proof,
+    texts,
+    tools,
+    contacts,
+    sections,
+    order,
+    crossLink,
+    heroLead,
+    headline,
+  } = site
   const telegram = contacts.find((contact) => contact.label === 'Telegram')
 
   return (
@@ -11,10 +25,12 @@ export function Hero() {
       <div className="sheet">
         <div className="masthead" data-set>
           <div className="dateline">
-            <span>Сводка · личное дело</span>
-            <span>Портфолио · две компетенции</span>
+            <span>Портфолио</span>
+            <span>{profile.role}</span>
             <span className="dateline-right">
-              <span>Томск · {editionDate}</span>
+              <span>
+                {profile.location} · {editionDate}
+              </span>
               <ThemeToggle />
             </span>
           </div>
@@ -26,45 +42,34 @@ export function Hero() {
         <div className="front">
           <div className="front-lead" data-set>
             <h2 className="front-headline">
-              Пишет то, <br className="lead-break" />
-              что читают. <br className="lead-break" />
-              Собирает то, <br className="lead-break" />
-              чем пользуются.
+              {headline.map((line, index) => (
+                <Fragment key={line}>
+                  {line}
+                  {index < headline.length - 1 ? (
+                    <br className="lead-break" />
+                  ) : null}
+                </Fragment>
+              ))}
             </h2>
             <p className="front-deck">{profile.tagline}</p>
           </div>
 
-          <aside className="front-rail" data-set aria-label="Содержание номера">
+          <aside
+            className="front-rail"
+            data-set
+            aria-label="Содержание страницы"
+          >
             <p className="rail-label">В номере</p>
             <nav className="contents" aria-label="Содержание">
-              <a href="#video">
-                <span className="n">00</span>
-                <span>
-                  Видео
-                  <small>минута</small>
-                </span>
-              </a>
-              <a href="#texts">
-                <span className="n">01</span>
-                <span>
-                  Тексты
-                  <small>{texts.length} публикаций</small>
-                </span>
-              </a>
-              <a href="#tools">
-                <span className="n">02</span>
-                <span>
-                  Инструменты
-                  <small>4 стенда</small>
-                </span>
-              </a>
-              <a href="#experience">
-                <span className="n">03</span>
-                <span>
-                  Опыт
-                  <small>RuminLab, фриланс, Томск</small>
-                </span>
-              </a>
+              {order.map((id, index) => (
+                <a href={`#${id}`} key={id}>
+                  <span className="n">{folioFor(index)}</span>
+                  <span>
+                    {sections[id].title}
+                    <small>{sections[id].short}</small>
+                  </span>
+                </a>
+              ))}
             </nav>
             {telegram ? (
               <a
@@ -78,6 +83,9 @@ export function Hero() {
               </a>
             ) : null}
             <p className="rail-note">{profile.availability}</p>
+            <a className="rail-cross" href={crossLink.href}>
+              {crossLink.label}
+            </a>
           </aside>
 
           <div className="measures" data-set>
@@ -94,29 +102,55 @@ export function Hero() {
 
           <div className="teasers" data-set>
             <div className="teaser-head">
-              <span>Начинается в номере</span>
-              <a href="#texts">
-                Все {texts.length} публикаций <Arrow />
-              </a>
+              <span>Дальше в номере</span>
+              {heroLead === 'texts' ? (
+                <a href="#texts">
+                  Все {texts.length} публикаций <Arrow />
+                </a>
+              ) : (
+                <a href="#tools">
+                  Все {tools.length} инструмента <Arrow />
+                </a>
+              )}
             </div>
-            {texts.slice(0, 3).map((text, index) => (
-              <a
-                className="teaser"
-                href={text.href}
-                target="_blank"
-                rel="noreferrer"
-                key={text.href}
-              >
-                <span className="num">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="title">{text.title}</span>
-                <span className="src">{text.source}</span>
-                <span className="views">
-                  {text.views.replace(' просмотров', '')}
-                </span>
-              </a>
-            ))}
+            {heroLead === 'texts'
+              ? texts.slice(0, 3).map((text, index) => (
+                  <a
+                    className="teaser"
+                    href={text.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={text.href}
+                  >
+                    <span className="num">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="title">{text.title}</span>
+                    <span className="src">{text.source}</span>
+                    <span className="views">
+                      {text.views.replace(' просмотров', '')}
+                    </span>
+                  </a>
+                ))
+              : tools.slice(0, 3).map((tool, index) => (
+                  <a
+                    className="teaser"
+                    href={tool.href ?? '#tools'}
+                    {...(tool.href
+                      ? { target: '_blank', rel: 'noreferrer' }
+                      : {})}
+                    key={tool.name}
+                  >
+                    <span className="num">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="title">{tool.name}</span>
+                    <span className="src">{tool.stack.join(' · ')}</span>
+                    <span className="views">
+                      <ArrowText text={tool.effect} />
+                    </span>
+                  </a>
+                ))}
           </div>
         </div>
       </div>

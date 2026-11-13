@@ -1,16 +1,14 @@
-import { content } from '../content'
+import { useSite, useSection } from '../content/context'
 import { Section } from './Section'
 
 export function Skills() {
+  const { id, folio, title, note } = useSection('skills')
+  const { skills } = useSite()
+
   return (
-    <Section
-      id="skills"
-      folio="05"
-      title="Навыки"
-      note="Допуски и инструменты"
-    >
+    <Section id={id} folio={folio} title={title} note={note}>
       <div className="skills-grid">
-        {content.skills.map((group) => (
+        {skills.map((group) => (
           <div className="skill-group" key={group.title}>
             <h3 className="skill-title">{group.title}</h3>
             <ul className="skill-list">

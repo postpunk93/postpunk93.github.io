@@ -1,19 +1,15 @@
-import { content } from '../content'
+import { useSite, useSection } from '../content/context'
 import { Arrow } from './Arrow'
 import { Section } from './Section'
 
 export function Contacts() {
-  const { contacts, profile } = content
+  const { id, folio, title, note } = useSection('contacts')
+  const { contacts, profile } = useSite()
   const telegram = contacts.find((contact) => contact.label === 'Telegram')
   const others = contacts.filter((contact) => contact.label !== 'Telegram')
 
   return (
-    <Section
-      id="contacts"
-      folio="06"
-      title="Контакты"
-      note="Приёмная · Томск"
-    >
+    <Section id={id} folio={folio} title={title} note={note}>
       <div className="contacts-grid">
         <div>
           <p className="contacts-lead">Быстрее всего — в Telegram.</p>
