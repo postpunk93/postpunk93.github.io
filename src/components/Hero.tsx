@@ -100,7 +100,10 @@ export function Hero() {
             ))}
           </div>
 
-          <div className="teasers" data-set>
+          <div
+            className={heroLead === 'tools' ? 'teasers teasers--tools' : 'teasers'}
+            data-set
+          >
             <div className="teaser-head">
               <span>Дальше в номере</span>
               {heroLead === 'texts' ? (
@@ -146,7 +149,7 @@ export function Hero() {
                     </span>
                     <span className="title">{tool.name}</span>
                     <span className="src">{tool.stack.join(' · ')}</span>
-                    <span className="views">
+                    <span className="views views--effect">
                       <ArrowText text={tool.effect} />
                     </span>
                   </a>

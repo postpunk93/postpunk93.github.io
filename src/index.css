@@ -595,6 +595,15 @@ ul {
   text-align: right;
   white-space: nowrap;
 }
+.teasers--tools .teaser {
+  grid-template-columns: 34px minmax(0, 1fr) 170px minmax(0, 210px);
+}
+.teaser .views--effect {
+  font: 400 11px/1.35 var(--font-mono);
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  white-space: normal;
+}
 .teaser:hover .title {
   color: var(--accent);
 }
@@ -1285,6 +1294,15 @@ ul {
   }
   .teaser .views {
     font-size: 16px;
+  }
+  .teasers--tools .teaser {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 2px 10px;
+  }
+  .teasers--tools .views--effect {
+    grid-column: 2;
+    text-align: left;
+    font-size: 11px;
   }
   .section {
     padding: 26px 0 40px;

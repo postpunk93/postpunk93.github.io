@@ -29,6 +29,12 @@ describe('pages', () => {
     expect(automation).toContain('Собираю AI-инструменты и довожу их')
   })
 
+  it('держит мета-описания в одной формулировке с выпуском', () => {
+    expect(editor).toContain('три инструмента в работе')
+    expect(editor).not.toContain('в продакшене')
+    expect(editor).not.toContain('Рутину')
+  })
+
   it('грузит общий код и favicon из корня', () => {
     for (const html of [editor, automation]) {
       expect(html).toContain('src="/src/main.tsx"')

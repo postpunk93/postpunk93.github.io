@@ -101,6 +101,21 @@ describe('App', () => {
     expect(screen.getAllByText('article-layout').length).toBeGreaterThan(0)
   })
 
+  it('выводит эффект инструмента отдельным слотом, а не числом', () => {
+    render(<App edition="automation" />)
+
+    const effects = Array.from(
+      document.querySelectorAll('.teasers .views--effect'),
+    )
+    expect(effects).toHaveLength(3)
+    expect(effects[0]).toHaveTextContent(/4 часа/)
+    expect(effects[1]).toHaveTextContent(/5 дней/)
+    expect(effects[2]).toHaveTextContent(/один дайджест/)
+    expect(
+      document.querySelectorAll('.teasers .views:not(.views--effect)'),
+    ).toHaveLength(0)
+  })
+
   it('держит видео, Telegram, контакты и переключатель темы', () => {
     render(<App />)
 
